@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useAccount } from "wagmi"
-import { QrScanner } from "@yudiel/react-qr-scanner"
+import { Scanner } from "@yudiel/react-qr-scanner"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -219,20 +219,22 @@ export function QRCodeScanner() {
 
         <div className="aspect-square bg-muted rounded-lg overflow-hidden">
           {isScanning ? (
-            <QrScanner
-              onDecode={handleScan}
+            <Scanner
+              onScan={handleScan}
               onError={handleError}
               constraints={{
                 facingMode: "environment",
               }}
-              containerStyle={{
-                width: "100%",
-                height: "100%",
-              }}
-              videoStyle={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
+              styles={{
+                container: {
+                  width: "100%",
+                  height: "100%",
+                },
+                video: {
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                },
               }}
             />
           ) : (
