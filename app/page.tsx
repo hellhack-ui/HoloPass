@@ -97,11 +97,48 @@ export default function HoloPassLanding() {
                 variant="outline"
                 size="lg"
                 className="border-border hover:bg-card px-8 py-3 bg-transparent group"
-                onClick={() => alert("Demo video coming soon!")}
+                onClick={() => window.open("https://youtu.be/3Exx5KUKmyg?si=EICgNVb4Qj3mUoAj", "_blank")}
               >
                 <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
                 Watch Demo
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Video Section */}
+      <section className="py-20 bg-gradient-to-br from-card/30 to-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">See HoloPass in Action</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Watch how HoloPass revolutionizes digital identity and exclusive access across events and communities
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+              <iframe
+                src="https://www.youtube.com/embed/3Exx5KUKmyg?si=EICgNVb4Qj3mUoAj"
+                title="HoloPass Demo Video"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="text-center mt-8">
+              <p className="text-muted-foreground mb-4">Ready to experience the future of digital identity?</p>
+              <WalletConnectModal>
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 transform hover:scale-105 transition-all duration-200"
+                >
+                  Get Started Now
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </WalletConnectModal>
             </div>
           </div>
         </div>
